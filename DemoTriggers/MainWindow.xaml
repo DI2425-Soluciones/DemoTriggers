@@ -1,0 +1,54 @@
+﻿<Window x:Class="DemoTriggers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoTriggers"
+        mc:Ignorable="d"
+        Title="Demo tipos de Triggers" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Style.Triggers>
+                <!-- Cuando una propiedad de mi elemento se sumple --><!-- 
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>-->
+                
+                <!-- Si queremos supervisar la propiedad de otro elemento o clase. -->
+                <!--<DataTrigger Binding="{Binding ElementName=mostrarCheckBox, Path=IsChecked}" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>-->
+
+                <!-- Animación funciona pulsando sobre cada imagen. -->
+                <EventTrigger RoutedEvent="MouseLeftButtonDown" >
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:4"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Content="Gestión opacidad imagenes" FontSize="40"
+               HorizontalContentAlignment="Center"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Image Source="Assets\boat.jpg" Stretch="Fill"    
+                Width="200" Margin="5"/>
+            <Image Source="Assets\lizard.jpg" Stretch="Fill"     
+                Width="200" Margin="5"/>
+            <Image Source="Assets\moutains.jpg" Stretch="Fill"     
+                Width="200" Margin="5"/>
+        </StackPanel>
+
+        <!--<CheckBox x:Name="mostrarCheckBox" Margin="5" Content="Mostrar" HorizontalAlignment="Center" />-->
+    </StackPanel>
+</Window>

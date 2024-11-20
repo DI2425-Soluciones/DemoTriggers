@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\canon_camera.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\boat.jpg" />
+    <None Remove="Assets\canon_camera.ico" />
+    <None Remove="Assets\lizard.jpg" />
+    <None Remove="Assets\moutains.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\canon_camera.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\boat.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\canon_camera.ico" />
+    <Resource Include="Assets\lizard.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\moutains.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
